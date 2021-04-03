@@ -43,10 +43,11 @@ dependencies {
     implementation "net.serenity-bdd:serenity-cucumber5:$rootProject.ext.serenityCucumberVersion"
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.slf4j:slf4j-simple:1.7.7'
+    implementation  'org.assertj:assertj-core:3.19.0'
 }
 
 gradle.startParameter.continueOnFailure = true
 
-test.finalizedBy(aggregate)
+test.finalizedBy(aggregate, reports)
 
 compileJava.dependsOn 'googleJavaFormat'
